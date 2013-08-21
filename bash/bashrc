@@ -1,0 +1,35 @@
+# If not running interactively, quit now
+[ -z "$PS1" ] && return
+
+
+# history
+shopt -s histappend
+HISTCONTROL=ignoreboth
+HISTSIZE=50000
+HISTFILESIZE=50000
+
+
+# terminal stuff
+shopt -s checkwinsize
+
+
+# the prompt
+PS1_HOST='\[\033[01;35m\]\u\[\033[00m\]@\[\033[01;32m\]\h\[\033[00m\]'
+PS1_DIR='\[\033[01;34m\]\W\[\033[00m\]'
+[ -z "$SCREEN" ] || PS1_ENV='(screen)'
+case "$TERM" in
+xterm|xterm-color|xterm-256color|screen|screen-256color)
+    PS1=${PS1_ENV}${PS1_HOST}':'${PS1_DIR}'\$ '
+    ;;
+*)
+    PS1='\u@\h:\w\$ '
+    ;;
+esac
+
+
+# aliases
+alias ls='ls -a'
+
+
+# environment variables
+export EDITOR='vim'

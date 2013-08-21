@@ -18,5 +18,12 @@ function install_git {
 }
 
 
+function install_bash {
+    rm -f ~/.bashrc
+    ln -s $DOTFILES/bash/bashrc ~/.bashrc
+}
+
+
 install_vim
 install_git
+install_bash
