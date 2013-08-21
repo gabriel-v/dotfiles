@@ -5,7 +5,7 @@ set -x
 DOTFILES="`pwd`"
 
 function install_vim {
-    rm -rf ~/.vim ~/.vimrc
+    rm -rf ~/.vim ~/.vimrc ~/.viminfo
     ln -s $DOTFILES/vim ~/.vim
     ln -s ~/.vim/vimrc ~/.vimrc
 }
