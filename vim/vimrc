@@ -1,0 +1,178 @@
+set encoding=utf-8
+let mapleader = ","
+
+" visual aids
+syntax on
+set ruler
+set number
+set listchars=tab:→\ ,trail:·
+set list
+set laststatus=2
+if version >= 703
+  set colorcolumn=80
+endif
+map <Leader>s :syntax sync fromstart<CR>
+
+" walk over end of line
+set whichwrap=b,s,<,>,[,]
+
+" no beeping
+set visualbell
+set t_vb=
+
+" indentation
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+set expandtab
+set smartindent
+nmap <Leader>I :setlocal noexpandtab<CR>
+nmap <Leader>i :setlocal expandtab<CR>
+
+" searching and word delimiters
+set iskeyword=@,48-57,_,-,192-255
+set wildmode=list:longest,list:full
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
+
+" sometimes ':' needs to be a word character
+map <Leader>: :setlocal iskeyword=@,48-57,_,-,192-255,:<CR>
+
+" editing paragraphs of text
+map <Leader>l :setlocal textwidth=72<CR>
+set nojoinspaces
+
+" files on disk
+set viminfo=
+set noswapfile
+set autoread
+set modelines=10
+let g:netrw_dirhistmax=0
+
+" disable annoying keys
+map <F1> <Nop>
+imap <F1> <Nop>
+map K <Nop>
+
+" working with tabs and buffers
+map <Leader>tn :tabnew<CR>
+map <Leader>tm :tabmove 
+map <Leader>e :e <C-R>=getcwd() . "/" <CR>
+map <Leader>te :tabe <C-R>=getcwd() . "/" <CR>
+map <Leader>ce :e <C-R>=expand("%:p:h") . "/" <CR>
+map <Leader>cte :tabe <C-R>=expand("%:p:h") . "/" <CR>
+map <Leader>tc :tabe <C-R>=expand("%:p:h") . "/" <CR><cfile><CR>
+cmap <C-P> <C-R>=expand("%:p:h") . "/" <CR>
+map <Leader>q :bufdo bdelete<CR>
+
+" search highlight; search without moving cursor
+nmap ? :let @/ = ""<CR>
+
+" current-line highlight
+nmap <Leader>h :setlocal invcursorline<CR>
+
+" tab size (2 or 4 spaces)
+function! TabSize2()
+  setlocal tabstop=2
+  setlocal shiftwidth=2
+  setlocal softtabstop=2
+endfunction
+
+function! TabSize4()
+  setlocal tabstop=4
+  setlocal shiftwidth=4
+  setlocal softtabstop=4
+endfunction
+
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+map <Leader>t4 :call TabSize4()<CR>
+map <Leader>t2 :call TabSize2()<CR>
+
+" select last word
+map <Leader>vl $BvE
+
+" underline
+map <Leader>u YpVr~
+
+" insert pdb
+map <F5> oimport pdb; pdb.set_trace()<esc>
+map <S-F5> Oimport pdb; pdb.set_trace()<esc>
+imap <F5> import pdb; pdb.set_trace()
+
+" insert current date, ISO format
+imap <F2> <C-R>=strftime("%Y-%m-%d")<CR>
+imap <M-F2> <C-R>=strftime("%Y-%m-%dT%H:%M:%S%z")<CR>
+imap <S-F2> <C-R>=strftime("%H:%M")<CR>
+
+" extract variable
+nmap <Leader>x O<C-a> = <ESC>p
+
+" letters with diacritics
+nmap <C-F> :call CycleThroughRomanianChars()<CR>
+
+" delete until end of line
+imap <C-K> <C-O>D
+
+" move single line or entire visual selection
+nmap <C-K> :move -2<CR>
+nmap <C-J> :move +1<CR>
+xmap <C-K> :move '<-2<CR>gv
+xmap <C-J> :move '>+1<CR>gv
+
+" quickly edit ~/.vimrc
+map <Leader>, :tabedit $MYVIMRC<CR>
+
+
+" gui window size
+map <Leader>H :set lines=200<CR>
+map <Leader>w :set columns=88<CR>
+
+" file types
+augroup filetypedetect
+au BufNewFile,BufRead *.zpt setfiletype html " ZPT files are like HTML
+au BufNewFile,BufRead *.zcml setfiletype xml " ZCML files are like XML
+au BufNewFile,BufRead *.note setfiletype yaml " Melody notes are just YAML
+au BufNewFile,BufRead {*.markdown,*.mkd,*.md} set filetype=markdown
+au BufNewFile,BufRead *.ledger setfiletype ledger
+au BufNewFile,BufRead *.n3 setfiletype n3
+au BufNewFile,BufRead *.conf setfiletype cfg
+au BufNewFile,BufRead *.less setfiletype less
+au BufNewFile,BufRead {Gemfile,Rakefile,Vagrantfile,config.ru,*.rake} set filetype=ruby
+au BufNewFile,BufRead Procfile set filetype=sh
+augroup END
+
+nmap <Leader>fc :set filetype=cfg<CR>
+nmap <Leader>fd :set filetype=htmldjango<CR>
+nmap <Leader>fj :set filetype=jinja<CR>
+nmap <Leader>fh :set filetype=html<CR>
+nmap <Leader>fp :set filetype=python<CR>
+nmap <Leader>fl :set filetype=less<CR>
+nmap <Leader>fs :set filetype=sh<CR>
+
+" makefiles use real tabs
+au FileType make setlocal noexpandtab
+
+" script to auto-close html/xml tags
+au Filetype html,xml,xsl,jinja source ~/.vim/scripts/closetag.vim
+
+" flake8, jshint
+au FileType python map <buffer> <F7> :call Flake8()<CR>
+au FileType javascript map <buffer> <F7> :JSHint<CR>
+
+" enable filetype plugins
+filetype plugin on
+
+" crontab is picky about changing files
+au BufEnter /private/tmp/crontab.* setlocal backupcopy=yes
+
+colorscheme zenburn
+hi ColorColumn ctermbg=235 guibg=#303030
+hi Visual ctermbg=28 guibg=#448866
+hi IncSearch cterm=NONE ctermfg=15 ctermbg=208 gui=NONE guifg=#ffff00 guibg=#dd7700
+hi Search cterm=NONE ctermfg=233 ctermbg=208 gui=NONE guifg=#444400 guibg=#dd7700
+hi CursorLine guibg=#006699
+hi SpecialKey guifg=#556655 guibg=#3f3f3f
