@@ -1,0 +1,71 @@
+# detect whether the tree is in a dirty state
+_git_dirty_stash() {
+	if ! git rev-parse --verify refs/stash >/dev/null 2>&1; then
+		return 0
+	fi
+	local dirty_stash_marker="`git config gitsh.dirty-stash || echo ' $'`"
+	_git_apply_color "$dirty_stash_marker" "color.sh.dirty-stash" "red"
+}
+
+_git_repo_state() {
+	local git_dir="$(git rev-parse --show-cdup).git"
+	if test -d "$git_dir/rebase-merge"; then
+		local state_marker="(rebase)"
+	elif test -f "$git_dir/MERGE_HEAD"; then
+		local state_marker="(merge)"
+	else
+		return 0
+	fi
+	_git_apply_color "$state_marker" "color.sh.repo-state" "red"
+}
+
+
+PS1='[`_git_headname`]`_git_repo_state``_git_workdir``_git_dirty``_git_dirty_stash`> '
+
+gitalias ll="log --graph --branches --remotes --abbrev-commit --date=relative --pretty=format:'%C(yellow)%h%C(reset) %C(red)%d%C(reset) %s %C(green)(%cr) %C(blue)<%an>%C(reset)'"
+gitalias l='ll -10'
+gitalias b='git branch -av'
+
+gitalias s='git status'
+gitalias d='git diff -M'
+gitalias dx='git-diffx -M'
+gitalias p='d --cached'
+gitalias px='dx --cached'
+
+gitalias st='git stash'
+gitalias co='git checkout'
+gitalias a='git add'
+gitalias aa='git add `git rev-parse --show-cdup`. -A'
+
+gitalias C='git commit --verbose'
+gitalias Ca='C -a'
+gitalias M='git commit --verbose --amend' # mnemonic: "mend"
+gitalias Ma='M -a'
+gitalias J='git merge --no-ff' # mnemonic: "join"
+gitalias FF='git merge --ff-only'
+
+gitalias SF='git svn fetch'
+gitalias SD='git svn dcommit'
+gitalias SR='git svn rebase'
+
+gitalias PR='git pull --rebase'
+gitalias P='git pull --ff-only'
+gitalias PP='git pull --rebase; git push'
+
+gitalias RI='git rebase -i'
+gitalias RC='git rebase --continue'
+gitalias RA='git rebase --abort'
+
+gitalias track='branch --set-upstream'
+
+unalias mv
+unalias rm
+unalias merge
+unalias n
+
+alias gmv='git mv'
+alias grm='git rm'
+
+ignoredir () {
+    echo '*' > "$1/.gitignore";
+}

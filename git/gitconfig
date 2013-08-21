@@ -1,0 +1,17 @@
+[user]
+    name = Alex Morega
+    email = alex@grep.ro
+[color]
+    ui = on
+[color "sh"]
+    branch = yellow
+[alias]
+    sh = !git-sh
+[core]
+    pager = less -FXRS -x4
+[credential]
+    helper = osxkeychain
+[push]
+	default = simple
+[diff]
+	algorithm = patience
