@@ -27,9 +27,14 @@ xterm|xterm-color|xterm-256color|screen|screen-256color)
 esac
 
 
-# aliases
-alias ls='ls -a'
-
-
 # environment variables
 export EDITOR='vim'
+export PATH=/usr/local/bin:/usr/local/sbin:$PATH
+
+
+# aliases
+if [ -z "`ls --color >/dev/null 2>&1 && echo 'we have colors'`" ]; then
+    alias ls='ls -a'
+else
+    alias ls='ls --color=auto -a'
+fi
