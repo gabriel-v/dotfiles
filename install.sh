@@ -24,6 +24,13 @@ function install_bash {
 }
 
 
+function install_python {
+    rm -f ~/.pythonstartup.py
+    ln -s $DOTFILES/python/pythonstartup.py ~/.pythonstartup.py
+}
+
+
 install_vim
 install_git
 install_bash
+install_python
