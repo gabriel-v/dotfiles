@@ -30,7 +30,11 @@ def _init():
     __builtin__.h = helpers
 
     if os.environ.get('PYTHON_PDB_HOOK') == 'on':
-        sys.excepthook = lambda *args: pdb.pm()
+        print("registering exception hook")
+        def excepthook(*args):
+            pdb.pm()
+            raise
+        sys.excepthook = excepthook
 
 _init()
 del _init
