@@ -30,7 +30,14 @@ function install_python {
 }
 
 
+function install_psql {
+    rm -f ~/.psqlrc
+    ln -s $DOTFILES/psql/psqlrc ~/.psqlrc
+}
+
+
 install_vim
 install_git
 install_bash
 install_python
+install_psql
