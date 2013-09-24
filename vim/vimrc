@@ -86,9 +86,6 @@ function! TabSize4()
   setlocal softtabstop=4
 endfunction
 
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
 map <Leader>t4 :call TabSize4()<CR>
 map <Leader>t2 :call TabSize2()<CR>
 
