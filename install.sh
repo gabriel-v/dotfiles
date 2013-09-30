@@ -24,6 +24,12 @@ function install_bash {
 }
 
 
+function install_zsh {
+    rm -f ~/.zshrc
+    ln -s $DOTFILES/zsh/zshrc ~/.zshrc
+}
+
+
 function install_python {
     rm -f ~/.pythonstartup.py
     ln -s $DOTFILES/python/pythonstartup.py ~/.pythonstartup.py
@@ -39,5 +45,6 @@ function install_psql {
 install_vim
 install_git
 install_bash
+install_zsh
 install_python
 install_psql

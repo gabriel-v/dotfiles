@@ -1,0 +1,57 @@
+# If not running interactively, quit now
+[ -z "$PS1" ] && return
+
+
+unsetopt SHARE_HISTORY
+
+export PYTHONSTARTUP=~/.pythonstartup.py
+
+GIT_LOG_FORMAT="%C(yellow)%h%C(reset) %C(blue)%an"
+GIT_LOG_FORMAT+=" %C(green)%ad%C(red)%d%C(reset)
+        %s"
+export GIT_LOG_FORMAT
+
+
+# aliases: ls
+alias ll='ls -l'
+
+
+# aliases: foreman
+alias fr='foreman run'
+alias fs='foreman start'
+
+
+# aliases: git
+alias g='git'
+alias gt='git stash'
+alias gd='git diff'
+alias gc='git commit'
+alias gca='git commit -a'
+alias gp='git diff --cached'
+alias gdw='gd --word-diff=color'
+alias gpw='gp --word-diff=color'
+alias gf='git fetch'
+alias gpl='git pull'
+alias gps='git push'
+alias gpp='git pull; git push'
+GLL='git log --graph --branches --remotes --abbrev-commit '
+GLL+='--date=relative --decorate --pretty=format:"$GIT_LOG_FORMAT"'
+alias gll=$GLL
+alias gl='gll -10'
+alias gaa='git add `git rev-parse --show-cdup`. -A'
+alias gm='git commit --verbose --amend'
+alias gj='git merge --no-ff'
+alias gff='git merge --ff-only'
+alias gmv='git mv'
+alias grm='git rm'
+alias gri='git rebase -i'
+alias gra='git rebase --abort'
+alias grc='git rebase --continue'
+alias gs='git status'
+gignoredir () {
+    echo '*' > "$1/.gitignore";
+}
+
+
+# local zsh file
+test -f $HOME/.zsh_localrc && source $HOME/.zsh_localrc
