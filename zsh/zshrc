@@ -2,8 +2,6 @@
 [ -z "$PS1" ] && return
 
 
-unsetopt SHARE_HISTORY
-
 export PYTHONSTARTUP=~/.pythonstartup.py
 
 GIT_LOG_FORMAT="%C(yellow)%h%C(reset) %C(blue)%an"
