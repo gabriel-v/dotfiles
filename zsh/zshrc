@@ -2,7 +2,10 @@
 [ -z "$PS1" ] && return
 
 
+# python and pip
 export PYTHONSTARTUP=~/.pythonstartup.py
+export PIP_REQUIRE_VIRTUALENV=true
+alias syspip='PIP_REQUIRE_VIRTUALENV= pip'
 
 GIT_LOG_FORMAT="%C(yellow)%h%C(reset) %C(blue)%an"
 GIT_LOG_FORMAT+=" %C(green)%ad%C(red)%d%C(reset)
