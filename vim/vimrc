@@ -13,21 +13,34 @@ if version >= 703
 endif
 map <Leader>s :syntax sync fromstart<CR>
 
-" walk over end of line
-set whichwrap=b,s,<,>,[,]
-
 " no beeping
 set visualbell
 set t_vb=
 
 " indentation
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
 set expandtab
 set smartindent
 nmap <Leader>I :setlocal noexpandtab<CR>
 nmap <Leader>i :setlocal expandtab<CR>
+
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+
+function! TabSize2()
+  setlocal tabstop=2
+  setlocal shiftwidth=2
+  setlocal softtabstop=2
+endfunction
+
+function! TabSize4()
+  setlocal tabstop=4
+  setlocal shiftwidth=4
+  setlocal softtabstop=4
+endfunction
+
+map <Leader>t4 :call TabSize4()<CR>
+map <Leader>t2 :call TabSize2()<CR>
 
 " searching and word delimiters
 set iskeyword=@,48-57,_,-,192-255
@@ -67,27 +80,11 @@ map <Leader>tc :tabe <C-R>=expand("%:p:h") . "/" <CR><cfile><CR>
 cmap <C-P> <C-R>=expand("%:p:h") . "/" <CR>
 map <Leader>q :bufdo bdelete<CR>
 
-" search highlight; search without moving cursor
+" search highlight
 nmap ? :let @/ = ""<CR>
 
 " current-line highlight
 nmap <Leader>h :setlocal invcursorline<CR>
-
-" tab size (2 or 4 spaces)
-function! TabSize2()
-  setlocal tabstop=2
-  setlocal shiftwidth=2
-  setlocal softtabstop=2
-endfunction
-
-function! TabSize4()
-  setlocal tabstop=4
-  setlocal shiftwidth=4
-  setlocal softtabstop=4
-endfunction
-
-map <Leader>t4 :call TabSize4()<CR>
-map <Leader>t2 :call TabSize2()<CR>
 
 " select last word
 map <Leader>vl $BvE
@@ -107,12 +104,6 @@ imap <S-F2> <C-R>=strftime("%H:%M")<CR>
 
 " extract variable
 nmap <Leader>x O<C-a> = <ESC>p
-
-" letters with diacritics
-nmap <C-F> :call CycleThroughRomanianChars()<CR>
-
-" delete until end of line
-imap <C-K> <C-O>D
 
 " move single line or entire visual selection
 nmap <C-K> :move -2<CR>
