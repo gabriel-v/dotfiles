@@ -38,3 +38,7 @@ if [ -z "`ls --color >/dev/null 2>&1 && echo 'we have colors'`" ]; then
 else
     alias ls='ls --color=auto -a'
 fi
+
+
+# local rc file
+[ -f .bashrc.local ] && source .bashrc.local
