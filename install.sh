@@ -2,7 +2,7 @@
 
 set -x
 
-DOTFILES="`pwd`"
+DOTFILES="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 function install_vim {
     rm -rf ~/.vim ~/.vimrc ~/.viminfo
