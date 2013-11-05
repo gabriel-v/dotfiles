@@ -9,7 +9,8 @@ alias syspip='PIP_REQUIRE_VIRTUALENV= pip'
 
 GIT_LOG_FORMAT="%C(yellow)%h%C(reset) %C(blue)%an"
 GIT_LOG_FORMAT+=" %C(green)%ad%C(red)%d%C(reset)
-        %s"
+        %s
+"
 export GIT_LOG_FORMAT
 
 
