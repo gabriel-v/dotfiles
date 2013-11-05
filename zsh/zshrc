@@ -66,5 +66,11 @@ gignoredir () {
 }
 
 
+# aliases: virtualenv
+alias sb='source `/bin/ls -d .sandbox* | head -1`/bin/activate'
+alias ve27='virtualenv -p python2.7'
+alias ve33='virtualenv -p python3.3'
+
+
 # local zsh file
 test -f $HOME/.zsh_localrc && source $HOME/.zsh_localrc
