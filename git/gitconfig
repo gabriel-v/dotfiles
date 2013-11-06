@@ -18,3 +18,5 @@
     renames = true
 [merge]
     defaultToUpstream = true
+[rebase]
+    autosquash = true
