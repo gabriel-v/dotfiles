@@ -62,6 +62,7 @@ alias gra='git rebase --abort'
 alias grc='git rebase --continue'
 alias gt='git stash'
 alias gtp='gt pop'
+alias gsm='git submodule'
 gignoredir () {
     echo '*' > "$1/.gitignore";
 }
