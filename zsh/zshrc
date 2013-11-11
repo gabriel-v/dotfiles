@@ -49,6 +49,7 @@ alias gf='git fetch'
 alias gpl='git pull'
 alias gph='git push'
 alias gpp='git pull; git push'
+alias gpr='git pull --rebase'
 GLL='git log --graph --branches --remotes --abbrev-commit '
 GLL+='--date=relative --decorate --pretty=format:"$GIT_LOG_FORMAT"'
 alias gll=$GLL
