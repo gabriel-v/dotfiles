@@ -3,6 +3,7 @@
 
 
 # python and pip
+export PYTHONDONTWRITEBYTECODE=on
 export PYTHONSTARTUP=~/.pythonstartup.py
 export PIP_REQUIRE_VIRTUALENV=true
 alias syspip='PIP_REQUIRE_VIRTUALENV= pip'
