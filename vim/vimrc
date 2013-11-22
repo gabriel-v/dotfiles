@@ -177,3 +177,5 @@ au FileType org unmap <buffer> <Tab>
 au FileType org unmap <buffer> <s-Tab>
 au FileType org nmap <buffer> <silent> <Tab> <Plug>OrgDemoteSubtreeNormal
 au FileType org nmap <buffer> <silent> <s-Tab> <Plug>OrgPromoteSubtreeNormal
+au FileType org imap <buffer> <Tab> <esc><Tab>li
+au FileType org imap <buffer> <s-Tab> <esc><s-Tab>li
