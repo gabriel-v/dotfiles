@@ -170,3 +170,10 @@ hi IncSearch cterm=NONE ctermfg=15 ctermbg=208 gui=NONE guifg=#ffff00 guibg=#dd7
 hi Search cterm=NONE ctermfg=233 ctermbg=208 gui=NONE guifg=#444400 guibg=#dd7700
 hi CursorLine guibg=#006699
 hi SpecialKey guifg=#556655 guibg=#3f3f3f
+
+
+" orgmode key remapping
+au FileType org unmap <buffer> <Tab>
+au FileType org unmap <buffer> <s-Tab>
+au FileType org nmap <buffer> <silent> <Tab> <Plug>OrgDemoteSubtreeNormal
+au FileType org nmap <buffer> <silent> <s-Tab> <Plug>OrgPromoteSubtreeNormal
