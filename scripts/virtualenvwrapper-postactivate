@@ -1,0 +1,8 @@
+#!/usr/bin/zsh
+# This hook is run after every virtualenv is activated.
+
+PROJECT_DIR="/ZeStuff/devel/$(basename $VIRTUAL_ENV)"
+if [ -d $PROJECT_DIR ]; then
+    cd "$PROJECT_DIR";
+fi
+unset PROJECT_DIR
