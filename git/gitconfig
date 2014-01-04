@@ -8,7 +8,7 @@
 [alias]
     sh = !git-sh
 [core]
-    pager = less -FXRS -x4
+    pager = less -XRS -x4
 [credential]
     helper = osxkeychain
 [push]
