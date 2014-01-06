@@ -122,6 +122,11 @@ map <Leader>, :tabedit $MYVIMRC<CR>
 map <Leader>H :set lines=200<CR>
 map <Leader>w :set columns=88<CR>
 
+nmap ✔ r✔
+vmap ✔ r✔
+nmap ✘ r✘
+vmap ✘ r✘
+
 " orgmode
 :let g:org_todo_keywords=['!', '|', '✔', '✘']
 
