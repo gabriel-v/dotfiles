@@ -146,7 +146,7 @@ augroup END
 
 nmap <Leader>fc :set filetype=cfg<CR>
 nmap <Leader>fd :set filetype=htmldjango<CR>
-nmap <Leader>fj :set filetype=jinja<CR>
+nmap <Leader>fj :set filetype=htmljinja<CR>
 nmap <Leader>fh :set filetype=html<CR>
 nmap <Leader>fp :set filetype=python<CR>
 nmap <Leader>fl :set filetype=less<CR>
@@ -156,7 +156,7 @@ nmap <Leader>fs :set filetype=sh<CR>
 au FileType make setlocal noexpandtab
 
 " script to auto-close html/xml tags
-au Filetype html,xml,xsl,jinja source ~/.vim/scripts/closetag.vim
+au Filetype html,xml,xsl,htmljinja source ~/.vim/scripts/closetag.vim
 
 " flake8, jshint
 au FileType python map <buffer> <F7> :call Flake8()<CR>
