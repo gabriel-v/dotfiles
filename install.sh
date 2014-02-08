@@ -42,9 +42,16 @@ function install_psql {
 }
 
 
+function install_tmux {
+    rm -f ~/.tmux.conf
+    ln -s $DOTFILES/tmux/tmux.conf ~/.tmux.conf
+}
+
+
 install_vim
 install_git
 install_bash
 install_zsh
 install_python
 install_psql
+install_tmux
