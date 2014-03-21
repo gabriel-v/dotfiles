@@ -188,3 +188,9 @@ au FileType org nmap <buffer> <silent> <Tab> <Plug>OrgDemoteSubtreeNormal
 au FileType org nmap <buffer> <silent> <s-Tab> <Plug>OrgPromoteSubtreeNormal
 au FileType org imap <buffer> <Tab> <esc><Tab>li
 au FileType org imap <buffer> <s-Tab> <esc><s-Tab>li
+
+
+
+" map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
+" \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
+" \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
