@@ -26,7 +26,7 @@ alias fs='foreman start'
 
 # aliases: git
 alias g='git'
-alias gs='git status'
+alias gs='git status -sb'
 alias gh='git show'
 alias gd='git diff'
 alias ga='git add --all'
