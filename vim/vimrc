@@ -194,3 +194,56 @@ au FileType org imap <buffer> <s-Tab> <esc><s-Tab>li
 " map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
 " \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
 " \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
+
+
+" toggle diacritic marks
+function! ToggleDiacritics()
+  " let ch = getline(".")[col(".") - 1]
+  normal yl
+  let ch = @"
+
+  if ch == "a"
+    normal ră
+  elseif ch == "ă"
+    normal râ
+  elseif ch == "â"
+    normal ra
+  elseif ch == "A"
+    normal rĂ
+  elseif ch == "Ă"
+    normal rÂ
+  elseif ch == "Â"
+    normal rA
+
+  elseif ch == "i"
+    normal rî
+  elseif ch == "î"
+    normal ri
+  elseif ch == "I"
+    normal rÎ
+  elseif ch == "Î"
+    normal rI
+
+  elseif ch == "t"
+    normal rț
+  elseif ch == "ț"
+    normal rt
+  elseif ch == "T"
+    normal rȚ
+  elseif ch == "Ț"
+    normal rT
+
+  elseif ch == "s"
+    normal rș
+  elseif ch == "ș"
+    normal rs
+  elseif ch == "S"
+    normal rȘ
+  elseif ch == "Ș"
+    normal rS
+  else
+    echo "unknown character:" ch
+  endif
+endfunction
+
+nmap <F6> :call ToggleDiacritics()<CR>
