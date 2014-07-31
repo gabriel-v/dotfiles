@@ -20,3 +20,5 @@
     defaultToUpstream = true
 [rebase]
     autosquash = true
+[remote "origin"]
+	prune = true
