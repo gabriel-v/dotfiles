@@ -140,6 +140,7 @@ au BufNewFile,BufRead *.ledger setfiletype ledger
 au BufNewFile,BufRead *.n3 setfiletype n3
 au BufNewFile,BufRead *.conf setfiletype cfg
 au BufNewFile,BufRead *.less setfiletype less
+au BufNewFile,BufRead *.coffee setfiletype coffee
 au BufNewFile,BufRead {Gemfile,Rakefile,Vagrantfile,config.ru,*.rake} set filetype=ruby
 au BufNewFile,BufRead Procfile set filetype=sh
 augroup END
