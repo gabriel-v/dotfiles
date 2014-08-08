@@ -26,9 +26,9 @@ set smartindent
 nmap <Leader>I :setlocal noexpandtab<CR>
 nmap <Leader>i :setlocal expandtab<CR>
 
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
 
 function! TabSize2()
   setlocal tabstop=2
@@ -161,6 +161,7 @@ au Filetype html,xml,xsl,htmljinja source ~/.vim/scripts/closetag.vim
 
 " flake8, jshint
 au FileType python map <buffer> <F7> :call Flake8()<CR>
+au FileType python call TabSize4()
 au FileType javascript map <buffer> <F7> :JSHint<CR>
 
 " enable filetype plugins
