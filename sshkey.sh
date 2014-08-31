@@ -13,7 +13,7 @@ function install_ssh_key {
         touch ~/.ssh/authorized_keys
         chmod 600 ~/.ssh/authorized_keys
     fi
-    cat $DOTFILES/ssh/id_rsa-2013-08.pub >> ~/.ssh/authorized_keys
+    cat $DOTFILES/ssh/id_rsa-2014-08.pub >> ~/.ssh/authorized_keys
 }
 
 install_ssh_key
