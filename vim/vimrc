@@ -155,6 +155,7 @@ nmap <Leader>fh :set filetype=html<CR>
 nmap <Leader>fp :set filetype=python<CR>
 nmap <Leader>fl :set filetype=less<CR>
 nmap <Leader>fs :set filetype=sh<CR>
+nmap <Leader>fx :set filetype=xml<CR>
 
 " makefiles use real tabs
 au FileType make setlocal noexpandtab
