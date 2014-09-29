@@ -20,6 +20,9 @@ map <Leader>s :syntax sync fromstart<CR>
 set visualbell
 set t_vb=
 
+" ctrl-a, ctrl-x should assume the number is decimal
+set nrformats=
+
 " indentation
 set expandtab
 set smartindent
