@@ -48,6 +48,12 @@ function install_tmux {
 }
 
 
+function install_slate {
+    rm -f ~/.slate
+    ln -s $DOTFILES/slate/slate ~/.slate
+}
+
+
 install_vim
 install_git
 install_bash
@@ -55,3 +61,4 @@ install_zsh
 install_python
 install_psql
 install_tmux
+install_slate
