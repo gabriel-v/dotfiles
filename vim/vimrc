@@ -80,6 +80,7 @@ map <Leader>tn :tabnew<CR>
 map <Leader>tm :tabmove 
 map <Leader>e :e <C-R>=getcwd() . "/" <CR>
 map <Leader>te :tabe <C-R>=getcwd() . "/" <CR>
+map <Leader>th :tabe ~/
 map <Leader>ce :e <C-R>=expand("%:p:h") . "/" <CR>
 map <Leader>cte :tabe <C-R>=expand("%:p:h") . "/" <CR>
 map <Leader>tc :tabe <C-R>=expand("%:p:h") . "/" <CR><cfile><CR>
@@ -119,6 +120,7 @@ xmap <C-J> :move '>+1<CR>gv
 
 " quickly edit ~/.vimrc
 map <Leader>, :tabedit $MYVIMRC<CR>
+map <Leader>< :source ~/.vimrc<CR>
 
 
 " gui window size
