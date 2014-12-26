@@ -49,7 +49,7 @@ map <Leader>t4 :call TabSize4()<CR>
 map <Leader>t2 :call TabSize2()<CR>
 
 " searching and word delimiters
-set iskeyword=@,48-57,_,-,192-255
+set iskeyword=@,48-57,_,192-255
 set wildmode=list:longest,list:full
 set hlsearch
 set incsearch
@@ -57,7 +57,7 @@ set ignorecase
 set smartcase
 
 " sometimes ':' needs to be a word character
-map <Leader>: :setlocal iskeyword=@,48-57,_,-,192-255,:<CR>
+map <Leader>: :setlocal iskeyword=@,48-57,_,192-255,:<CR>
 
 " editing paragraphs of text
 map <Leader>l :setlocal textwidth=72<CR>
