@@ -25,7 +25,8 @@ set nrformats=
 
 " indentation
 set expandtab
-set smartindent
+set cindent
+set cinkeys=0{,0},0),:,!^F,o,O,e
 nmap <Leader>I :setlocal noexpandtab<CR>
 nmap <Leader>i :setlocal expandtab<CR>
 
