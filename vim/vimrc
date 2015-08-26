@@ -60,7 +60,7 @@ set smartcase
 map <Leader>: :setlocal iskeyword=@,48-57,_,192-255,:<CR>
 
 " editing paragraphs of text
-map <Leader>l :setlocal textwidth=72<CR>
+map <Leader>l :setlocal textwidth=79<CR>
 set nojoinspaces
 
 " files on disk
