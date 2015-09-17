@@ -1,25 +1,25 @@
 [user]
-    name = Alex Morega
-    email = alex@grep.ro
+	name = Alex Morega
+	email = alex@grep.ro
 [color]
-    ui = on
+	ui = on
 [color "sh"]
-    branch = yellow
+	branch = yellow
 [alias]
-    sh = !git-sh
+	sh = !git-sh
 [core]
-    pager = less -XRS -x4
+	pager = less -XRS -x4
 [credential]
-    helper = osxkeychain
+	helper = osxkeychain
 [push]
-    default = simple
+	default = simple
 [diff]
-    algorithm = patience
-    renames = true
+	algorithm = patience
+	renames = true
 [merge]
-    defaultToUpstream = true
+	defaultToUpstream = true
 [rebase]
-    autosquash = true
+	autosquash = true
 [remote "origin"]
 	prune = true
 [filter "lfs"]
