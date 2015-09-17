@@ -4,6 +4,11 @@ set -x
 
 DOTFILES="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
+function install_dotfiles {
+    rm -rf ~/.dotfiles
+    ln -s $DOTFILES ~/.dotfiles
+}
+
 function install_vim {
     rm -rf ~/.vim ~/.vimrc ~/.viminfo
     ln -s $DOTFILES/vim ~/.vim
@@ -54,6 +59,7 @@ function install_slate {
 }
 
 
+install_dotfiles
 install_vim
 install_git
 install_bash
