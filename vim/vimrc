@@ -152,7 +152,7 @@ augroup END
 
 nmap <Leader>fc :set filetype=cfg<CR>
 nmap <Leader>fd :set filetype=htmldjango<CR>
-nmap <Leader>fj :set filetype=htmljinja<CR>
+nmap <Leader>fj :set filetype=javascript.jsx<CR>
 nmap <Leader>fh :set filetype=html<CR>
 nmap <Leader>fp :set filetype=python<CR>
 nmap <Leader>fl :set filetype=less<CR>
