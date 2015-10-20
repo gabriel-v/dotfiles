@@ -255,3 +255,6 @@ function! ToggleDiacritics()
 endfunction
 
 nmap <F6> :call ToggleDiacritics()<CR>
+
+colorscheme pencil
+set background=light
