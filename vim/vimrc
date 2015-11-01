@@ -176,17 +176,10 @@ filetype plugin on
 " crontab is picky about changing files
 au BufEnter /private/tmp/crontab.* setlocal backupcopy=yes
 
-colorscheme zenburn
-hi ColorColumn ctermbg=235 guibg=#303030
-hi Visual ctermbg=28 guibg=#448866
-hi IncSearch cterm=NONE ctermfg=15 ctermbg=208 gui=NONE guifg=#ffff00 guibg=#dd7700
-hi Search cterm=NONE ctermfg=233 ctermbg=208 gui=NONE guifg=#444400 guibg=#dd7700
-hi CursorLine guibg=#006699
-hi SpecialKey guifg=#556655 guibg=#3f3f3f
-
-hi yamlKeyValueDelimiter guifg=#888888
-hi yamlBlockCollectionItemStart guifg=#888888 gui=NONE
-hi yamlBlockMappingKey guifg=#8888ff
+colorscheme pencil
+set background=light
+set guifont=Menlo\ Regular:h13
+hi Error guifg=#660000 guibg=#ffdddd
 
 
 " orgmode key remapping
@@ -255,6 +248,3 @@ function! ToggleDiacritics()
 endfunction
 
 nmap <F6> :call ToggleDiacritics()<CR>
-
-colorscheme pencil
-set background=light
