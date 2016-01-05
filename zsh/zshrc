@@ -39,12 +39,12 @@ alias gca='gc --all'
 alias gm='gc --amend'
 alias gma='gm --all'
 alias gp='git diff --cached'
-alias gdw='gd --word-diff=color'
-alias gpw='gp --word-diff=color'
-alias ghw='gh --word-diff=color'
-alias gdc='gdw --word-diff-regex=.'
-alias gpc='gpw --word-diff-regex=.'
-alias ghc='ghw --word-diff-regex=.'
+alias gdw="gd --word-diff=color --word-diff-regex='\w+|[^[:space:]]'"
+alias gpw="gp --word-diff=color --word-diff-regex='\w+|[^[:space:]]'"
+alias ghw="gh --word-diff=color --word-diff-regex='\w+|[^[:space:]]'"
+alias gdc="gd --word-diff=color --word-diff-regex='.'"
+alias gpc="gp --word-diff=color --word-diff-regex='.'"
+alias ghc="gh --word-diff=color --word-diff-regex='.'"
 alias gds='gd --stat'
 alias gps='gp --stat'
 alias ghs='gh --stat'
