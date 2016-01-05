@@ -148,6 +148,7 @@ au BufNewFile,BufRead *.less setfiletype less
 au BufNewFile,BufRead *.coffee setfiletype coffee
 au BufNewFile,BufRead {Gemfile,Rakefile,Vagrantfile,config.ru,*.rake} set filetype=ruby
 au BufNewFile,BufRead Procfile set filetype=sh
+au BufNewFile,BufRead *.tag setfiletype html
 augroup END
 
 nmap <Leader>fc :set filetype=cfg<CR>
