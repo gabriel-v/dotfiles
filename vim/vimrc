@@ -131,6 +131,7 @@ nmap ✔ r✔
 vmap ✔ r✔
 nmap ✘ r✘
 vmap ✘ r✘
+nmap ! r!
 
 " orgmode
 :let g:org_todo_keywords=['!', '|', '✔', '✘']
