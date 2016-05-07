@@ -187,10 +187,18 @@ filetype plugin on
 " crontab is picky about changing files
 au BufEnter /private/tmp/crontab.* setlocal backupcopy=yes
 
-colorscheme pencil
-set background=light
-set guifont=Menlo\ Regular:h13
-hi Error guifg=#660000 guibg=#ffdddd
+if has('gui_running')
+  colorscheme solarized
+  set background=light
+  hi Title guifg=#268bd2 gui=none
+  hi Special none
+  hi Error none
+else
+  colorscheme pencil
+endif
+
+set guifont=Menlo\ Regular:h14
+"hi Error guifg=#660000 guibg=#ffdddd
 
 
 " orgmode key remapping
