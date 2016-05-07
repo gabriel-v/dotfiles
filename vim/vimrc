@@ -133,6 +133,14 @@ nmap ✘ r✘
 vmap ✘ r✘
 nmap ! r!
 
+function! SyntaxAtCursor()
+  for id in synstack(line("."), col("."))
+     echo synIDattr(synIDtrans(id), "name")
+  endfor
+endfunction
+
+map <Leader>y :call SyntaxAtCursor()<CR>
+
 " orgmode
 :let g:org_todo_keywords=['!', '|', '✔', '✘']
 
