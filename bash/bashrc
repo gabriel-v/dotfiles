@@ -40,5 +40,61 @@ else
 fi
 
 
+# git
+GIT_LOG_FORMAT="%C(yellow)%h%C(reset) %C(blue)%an"
+GIT_LOG_FORMAT+=" %C(green)%ad%C(red)%d%C(reset)
+        %s
+"
+export GIT_LOG_FORMAT
+alias g='git'
+alias gs='git status -sb'
+alias gh='git show'
+alias gd='git diff'
+alias ga='git add --all'
+alias gaa='ga :/'
+alias gr='git reset'
+alias grh='gr --hard'
+alias gco='git checkout'
+alias gc='git commit --verbose'
+alias gca='gc --all'
+alias gm='gc --amend'
+alias gma='gm --all'
+alias gp='git diff --cached'
+alias gdw="gd --word-diff=color --word-diff-regex='\w+|[^[:space:]]'"
+alias gpw="gp --word-diff=color --word-diff-regex='\w+|[^[:space:]]'"
+alias ghw="gh --word-diff=color --word-diff-regex='\w+|[^[:space:]]'"
+alias gdc="gd --word-diff=color --word-diff-regex='.'"
+alias gpc="gp --word-diff=color --word-diff-regex='.'"
+alias ghc="gh --word-diff=color --word-diff-regex='.'"
+alias gds='gd --stat'
+alias gps='gp --stat'
+alias ghs='gh --stat'
+alias gb='git branch'
+alias gf='git fetch'
+alias gpl='git pull'
+alias gph='git push'
+alias gpp='git pull; git push'
+alias gpr='git pull --rebase'
+GLL='git log --graph --branches --remotes --abbrev-commit '
+GLL+='--date=relative --decorate --pretty=format:"$GIT_LOG_FORMAT"'
+alias gll=$GLL
+alias glls='gll --stat'
+alias gl='gll -10'
+alias gls='gl --stat'
+alias glp='git log --patch'
+alias glpw='git log --patch --word-diff=color'
+alias glpc='glpw --word-diff-regex=.'
+alias gj='git merge --no-ff'
+alias gff='git merge --ff-only'
+alias gmv='git mv'
+alias grm='git rm'
+alias gri='git rebase --interactive'
+alias gra='git rebase --abort'
+alias grc='git rebase --continue'
+alias gt='git stash'
+alias gtp='gt pop'
+alias gsm='git submodule'
+
+
 # local rc file
 [ -f .bashrc.local ] && source .bashrc.local
