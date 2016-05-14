@@ -38,6 +38,9 @@ function install_zsh {
 function install_python {
     rm -f ~/.pythonstartup.py
     ln -s $DOTFILES/python/pythonstartup.py ~/.pythonstartup.py
+    mkdir -p ~/.config
+    rm -f ~/.config/flake8
+    ln -s $DOTFILES/python/flake8 ~/.config/flake8
 }
 
 
