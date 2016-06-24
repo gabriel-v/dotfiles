@@ -4,15 +4,15 @@ config checkDefaultsOnLoad true
 config focusCheckWidthMax 3000
 
 
-bind l:cmd,ctrl,alt resize +10 +0
-bind h:cmd,ctrl,alt resize -10 +0
-bind k:cmd,ctrl,alt resize +0  -10
-bind j:cmd,ctrl,alt resize +0  +10
+bind l:cmd,ctrl,alt resize +20 +0
+bind h:cmd,ctrl,alt resize -20 +0
+bind k:cmd,ctrl,alt resize +0  -20
+bind j:cmd,ctrl,alt resize +0  +20
 
-bind l:cmd,ctrl nudge +10  +0
-bind h:cmd,ctrl nudge -10  +0
-bind k:cmd,ctrl nudge +0  -10
-bind j:cmd,ctrl nudge +0  +10
+bind l:cmd,ctrl nudge +20  +0
+bind h:cmd,ctrl nudge -20  +0
+bind k:cmd,ctrl nudge +0  -20
+bind j:cmd,ctrl nudge +0  +20
 
 bind l:cmd,ctrl,shift nudge +1 +0
 bind h:cmd,ctrl,shift nudge -1 +0
