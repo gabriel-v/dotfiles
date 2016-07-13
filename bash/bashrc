@@ -13,6 +13,12 @@ HISTFILESIZE=50000
 shopt -s checkwinsize
 
 
+# python
+export PYTHONDONTWRITEBYTECODE=on
+export PIP_REQUIRE_VIRTUALENV=true
+alias syspip='PIP_REQUIRE_VIRTUALENV= pip'
+
+
 # the prompt
 PS1_HOST='\[\033[01;35m\]\u\[\033[00m\]@\[\033[01;32m\]\h\[\033[00m\]'
 PS1_DIR='\[\033[01;34m\]\W\[\033[00m\]'
