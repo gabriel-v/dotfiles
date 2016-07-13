@@ -19,7 +19,7 @@ bind h:cmd,ctrl,shift nudge -1 +0
 bind k:cmd,ctrl,shift nudge +0 -1
 bind j:cmd,ctrl,shift nudge +0 +1
 
-bind l:cmd,alt focus right
-bind h:cmd,alt focus left
-bind k:cmd,alt focus up
-bind j:cmd,alt focus down
+bind l:cmd,shift focus right
+bind h:cmd,shift focus left
+bind k:cmd,shift focus up
+bind j:cmd,shift focus down
