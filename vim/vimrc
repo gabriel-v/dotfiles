@@ -171,6 +171,7 @@ nmap <Leader>fs :set filetype=sh<CR>
 nmap <Leader>fx :set filetype=xml<CR>
 nmap <Leader>fn :set filetype=nginx<CR>
 nmap <Leader>fm :set filetype=monitrc<CR>
+nmap <Leader>fy :set filetype=yaml<CR>
 
 " makefiles use real tabs
 au FileType make setlocal noexpandtab
