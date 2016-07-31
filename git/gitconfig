@@ -27,4 +27,4 @@
 	smudge = git-lfs smudge -- %f
 	required = true
 [init]
-    templateDir = ~/.dotfiles/git/templates
+	templateDir = ~/.dotfiles/git/templates
