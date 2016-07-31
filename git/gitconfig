@@ -23,8 +23,8 @@
 [remote "origin"]
 	prune = true
 [filter "lfs"]
-	clean = git-lfs clean %f
-	smudge = git-lfs smudge %f
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
 	required = true
 [init]
     templateDir = ~/.dotfiles/git/templates
