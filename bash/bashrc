@@ -17,6 +17,7 @@ shopt -s checkwinsize
 export PYTHONDONTWRITEBYTECODE=on
 export PIP_REQUIRE_VIRTUALENV=true
 alias syspip='PIP_REQUIRE_VIRTUALENV= pip'
+alias mkvirtualenv='mkvirtualenv -p python3'
 
 
 # the prompt
