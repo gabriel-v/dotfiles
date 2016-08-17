@@ -2,7 +2,7 @@
 
 set -x
 
-DOTFILES="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+DOTFILES="$( cd "$( dirname "${BASH_SOURCE[0]}" )/.." && pwd )"
 
 function install_ssh_key {
     if [ ! -d ~/.ssh ]; then
