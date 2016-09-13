@@ -125,7 +125,10 @@ map <Leader>< :source ~/.vimrc<CR>
 
 " gui window size
 map <Leader>H :set lines=200<CR>
-map <Leader>w :set columns=88<CR>
+map <Leader>W :set columns=88<CR>
+
+" line wrap
+map <Leader>w :setlocal nowrap<CR>
 
 nmap ✔ r✔
 vmap ✔ r✔
