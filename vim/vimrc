@@ -128,7 +128,7 @@ map <Leader>H :set lines=200<CR>
 map <Leader>W :set columns=88<CR>
 
 " line wrap
-map <Leader>w :setlocal nowrap<CR>
+map <Leader>w :setlocal invwrap<CR>
 
 nmap ✔ r✔
 vmap ✔ r✔
