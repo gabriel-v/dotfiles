@@ -171,13 +171,10 @@ au BufEnter /private/tmp/crontab.* setlocal backupcopy=yes
 
 if has('gui_running')
   set background=dark
-  colorscheme solarized
-  hi Title guifg=#268bd2 gui=none
-  hi Special none
-  hi Error none
+  colorscheme hybrid
 else
   set background=dark
-  colorscheme pencil
+  colorscheme hybrid
 endif
 
 set guifont=Menlo\ Regular:h14
