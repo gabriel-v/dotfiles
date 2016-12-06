@@ -96,17 +96,13 @@ nmap <Leader>h :setlocal invcursorline<CR>
 " select last word
 map <Leader>vl $BvE
 
-" underline
-map <Leader>u YpVr~
-
 " insert pdb
 map <F5> oimport pdb; pdb.set_trace()<esc>
 map <S-F5> Oimport pdb; pdb.set_trace()<esc>
 imap <F5> import pdb; pdb.set_trace()
 
-" insert current date, ISO format
+" insert current date or time
 imap <F2> <C-R>=strftime("%Y-%m-%d")<CR>
-imap <M-F2> <C-R>=strftime("%Y-%m-%dT%H:%M:%S%z")<CR>
 imap <S-F2> <C-R>=strftime("%H:%M")<CR>
 
 " extract variable
@@ -122,7 +118,6 @@ xmap <C-J> :move '>+1<CR>gv
 map <Leader>, :tabedit $MYVIMRC<CR>
 map <Leader>< :source ~/.vimrc<CR>
 
-
 " gui window size
 map <Leader>H :set lines=200<CR>
 map <Leader>W :set columns=88<CR>
@@ -137,31 +132,12 @@ vmap ✘ r✘
 nmap ! r!
 nmap @ r@
 
-function! SyntaxAtCursor()
-  for id in synstack(line("."), col("."))
-     echo synIDattr(synIDtrans(id), "name")
-  endfor
-endfunction
-
-map <Leader>y :call SyntaxAtCursor()<CR>
-
-" orgmode
-:let g:org_todo_keywords=['!', '|', '✔', '✘']
-
 " file types
 augroup filetypedetect
-au BufNewFile,BufRead *.zpt setfiletype html " ZPT files are like HTML
-au BufNewFile,BufRead *.zcml setfiletype xml " ZCML files are like XML
-au BufNewFile,BufRead *.note setfiletype yaml " Melody notes are just YAML
-au BufNewFile,BufRead {*.markdown,*.mkd,*.md} set filetype=markdown
-au BufNewFile,BufRead *.ledger setfiletype ledger
-au BufNewFile,BufRead *.n3 setfiletype n3
+au BufNewFile,BufRead {*.markdown,*.md} set filetype=markdown
 au BufNewFile,BufRead *.conf setfiletype cfg
 au BufNewFile,BufRead *.less setfiletype less
-au BufNewFile,BufRead *.coffee setfiletype coffee
 au BufNewFile,BufRead {Gemfile,Rakefile,Vagrantfile,config.ru,*.rake} set filetype=ruby
-au BufNewFile,BufRead Procfile set filetype=sh
-au BufNewFile,BufRead *.tag setfiletype html
 augroup END
 
 nmap <Leader>fc :set filetype=cfg<CR>
@@ -205,72 +181,3 @@ else
 endif
 
 set guifont=Menlo\ Regular:h14
-"hi Error guifg=#660000 guibg=#ffdddd
-
-
-" orgmode key remapping
-au FileType org unmap <buffer> <Tab>
-au FileType org unmap <buffer> <s-Tab>
-au FileType org nmap <buffer> <silent> <Tab> <Plug>OrgDemoteSubtreeNormal
-au FileType org nmap <buffer> <silent> <s-Tab> <Plug>OrgPromoteSubtreeNormal
-au FileType org imap <buffer> <Tab> <esc><Tab>li
-au FileType org imap <buffer> <s-Tab> <esc><s-Tab>li
-
-
-
-" map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
-" \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
-" \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
-
-
-" toggle diacritic marks
-function! ToggleDiacritics()
-  " let ch = getline(".")[col(".") - 1]
-  normal yl
-  let ch = @"
-
-  if ch == "a"
-    normal ră
-  elseif ch == "ă"
-    normal râ
-  elseif ch == "â"
-    normal ra
-  elseif ch == "A"
-    normal rĂ
-  elseif ch == "Ă"
-    normal rÂ
-  elseif ch == "Â"
-    normal rA
-
-  elseif ch == "i"
-    normal rî
-  elseif ch == "î"
-    normal ri
-  elseif ch == "I"
-    normal rÎ
-  elseif ch == "Î"
-    normal rI
-
-  elseif ch == "t"
-    normal rț
-  elseif ch == "ț"
-    normal rt
-  elseif ch == "T"
-    normal rȚ
-  elseif ch == "Ț"
-    normal rT
-
-  elseif ch == "s"
-    normal rș
-  elseif ch == "ș"
-    normal rs
-  elseif ch == "S"
-    normal rȘ
-  elseif ch == "Ș"
-    normal rS
-  else
-    echo "unknown character:" ch
-  endif
-endfunction
-
-nmap <F6> :call ToggleDiacritics()<CR>
