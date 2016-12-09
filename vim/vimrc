@@ -172,6 +172,7 @@ au BufEnter /private/tmp/crontab.* setlocal backupcopy=yes
 if has('gui_running')
   set background=dark
   colorscheme hybrid
+  hi Error none
 else
   set background=dark
   colorscheme hybrid
