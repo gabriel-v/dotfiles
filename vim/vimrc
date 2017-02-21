@@ -170,20 +170,11 @@ filetype plugin on
 au BufEnter /private/tmp/crontab.* setlocal backupcopy=yes
 
 if has('gui_running')
-  set background=dark
-  colorscheme hybrid
+  set background=light
+  colorscheme solarized
 else
   set background=dark
   colorscheme hybrid
 endif
-
-function! MarkdownColors()
-  colorscheme solarized
-  hi Title guifg=#268bd2 gui=none
-  hi Special none
-  hi Error none
-endfunction
-
-map <Leader>m :call MarkdownColors()<CR>
 
 set guifont=Menlo\ Regular:h14
